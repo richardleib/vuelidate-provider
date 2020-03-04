@@ -32,5 +32,9 @@
   },
   "dependencies": {
     "@d_hristov/get-value": "^3.0.4"
+  },
+  "scripts": {
+    "build": "node config/build.js",
+    "dev": "node config/development.js"
   }
 }
