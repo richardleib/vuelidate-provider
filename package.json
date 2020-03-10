@@ -2,7 +2,10 @@
   "name": "vuelidate-provider",
   "version": "1.0.0",
   "description": "Helps provide vuelidate for nested components",
-  "main": "index.js",
+  "main": "dist/vuelidate-provider.common.js",
+  "module": "dist/vuelidate-provider.esm.js",
+  "unpkg": "dist/vuelidate-provider.js",
+  "jsdelivr": "dist/vuelidate-provider.js",
   "repository": "https://github.com/leonied7/vuelidate-provider.git",
   "author": {
     "name": "Denis",
