@@ -42,12 +42,13 @@
   },
   "scripts": {
     "build": "node config/build.js",
+    "clean": "rm -rf dist",
     "release": "standard-version -a",
     "dev": "node config/development.js"
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "yarn build && git add -A"
+      "postchangelog": "yarn clean && yarn build && git add -A"
     }
   }
 }
