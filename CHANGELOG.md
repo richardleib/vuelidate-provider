@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.5](https://github.com/leonied7/vuelidate-provider/compare/v1.0.4...v1.0.5) (2020-03-12)
+
+
+### Bug Fixes
+
+* remove node_modules ([29a96af](https://github.com/leonied7/vuelidate-provider/commit/29a96afcf79673794081cc1f4e939914b4eec9d2))
+
 ### [1.0.4](https://github.com/leonied7/vuelidate-provider/compare/v1.0.3...v1.0.4) (2020-03-12)
 
 
