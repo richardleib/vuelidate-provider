@@ -33,8 +33,8 @@ const entries = {
       file: `dist/vuelidate-provider.min.js`,
       name: 'VuelidateProvider',
       format: 'umd',
-      plugins: [terser()]
     },
+    plugins: [terser()],
     env: 'production'
   },
   development: {
@@ -67,7 +67,8 @@ function genConfig (opts) {
       buble({
         transforms: { dangerousForOf: true },
         objectAssign: 'Object.assign'
-      })
+      }),
+      ...opts.plugins || []
     ],
     external: opts.external
   }
