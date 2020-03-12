@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.0.3 
+ * vuelidate-provider v1.0.4 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
