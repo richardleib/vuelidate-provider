@@ -17,15 +17,9 @@ function build (entries) {
 }
 
 async function buildEntry (config) {
-  // const isProd = /min\.js$/.test(config.output.file)
   const bundle = await rollup.rollup(config)
   await bundle.generate(config)
   await bundle.write(config);
-  // console.log(blue(code));
-  // console.dir(generate.output);
-  // if (!isProd) return write(config.output.file, code)
-  // const minified = (config.output.banner ? config.output.banner + '\n' : '') + code
-  // return write(config.output.file, minified)
 }
 
 async function watchEntry (config) {
@@ -35,12 +29,6 @@ async function watchEntry (config) {
     if(event.code === 'ERROR') {
       console.log(event);
     }
-    // event.code can be one of:
-    //   START        — the watcher is (re)starting
-    //   BUNDLE_START — building an individual bundle
-    //   BUNDLE_END   — finished building a bundle
-    //   END          — finished building all bundles
-    //   ERROR        — encountered an error while bundling
   });
 }
 
