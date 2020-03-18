@@ -1,5 +1,9 @@
 # vuelidate-provider
 
+## Demo
+
+[Example](https://codesandbox.io/s/vuelidate-provider-4enyr)
+
 ## Installation
 ```bash
 npm install vuelidate-provider --save
