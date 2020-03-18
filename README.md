@@ -6,7 +6,7 @@ npm install vuelidate-provider --save
 ```
 or
 ```bash
-yarn add vuelidate
+yarn add vuelidate-provider
 ```
 
 You can import the library and use as a Vue plugin to component globally registration.
