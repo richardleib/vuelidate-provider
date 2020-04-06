@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atnrpro/vuelidate-provider/issues"
+    "url": "https://github.com/leonied7/vuelidate-provider/issues"
   },
-  "homepage": "https://github.com/atnrpro/vuelidate-provider#readme",
+  "homepage": "https://github.com/leonied7/vuelidate-provider#readme",
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.1",
     "@rollup/plugin-commonjs": "^11.0.2",
