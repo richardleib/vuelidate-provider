@@ -3,9 +3,7 @@ import { normalizeChildren } from "../utils";
 export default {
   name: "VuelidateInjector",
   inject: {
-    getValidatorByPath: {
-      default: () => () => {}
-    },
+    getValidatorByPath: {},
     getValidatorProxyPath: {
       default: () => () => ""
     }

@@ -3,9 +3,6 @@ import { normalizeChildren } from "../utils";
 export default {
   name: "VuelidateProxy",
   inject: {
-    parentProvidedValidator: {
-      from: "providedValidator"
-    },
     getParentValidatorByPath: {
       from: "getValidatorByPath"
     },

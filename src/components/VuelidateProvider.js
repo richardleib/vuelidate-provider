@@ -18,7 +18,6 @@ export default {
   },
   provide() {
     return {
-      providedValidator: this.validator,
       getValidatorByPath: this.getValidatorByPath
     };
   }
