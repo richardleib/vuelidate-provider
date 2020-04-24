@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.0.6 
+ * vuelidate-provider v1.0.7 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
@@ -151,7 +151,6 @@ var VuelidateProvider = (function (exports) {
     },
     provide: function provide() {
       return {
-        providedValidator: this.validator,
         getValidatorByPath: this.getValidatorByPath
       };
     }
@@ -170,9 +169,6 @@ var VuelidateProvider = (function (exports) {
   var VuelidateProxy = {
     name: "VuelidateProxy",
     inject: {
-      parentProvidedValidator: {
-        from: "providedValidator"
-      },
       getParentValidatorByPath: {
         from: "getValidatorByPath"
       },
@@ -232,9 +228,7 @@ var VuelidateProvider = (function (exports) {
   var VuelidateInjector = {
     name: "VuelidateInjector",
     inject: {
-      getValidatorByPath: {
-        default: function () { return function () {}; }
-      },
+      getValidatorByPath: {},
       getValidatorProxyPath: {
         default: function () { return function () { return ""; }; }
       }

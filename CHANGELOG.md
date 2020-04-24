@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.7](https://github.com/leonied7/vuelidate-provider/compare/v1.0.6...v1.0.7) (2020-04-24)
+
+
+### Bug Fixes
+
+* remove unused code ([7f4e0a2](https://github.com/leonied7/vuelidate-provider/commit/7f4e0a27ea1ed309018a91d96b7dd8e34a21ac2d))
+* set correct path to homepage and bugs ([142a37d](https://github.com/leonied7/vuelidate-provider/commit/142a37d9e6cae99c4cab5bde20c8350e75344c6c))
+
 ### [1.0.6](https://github.com/leonied7/vuelidate-provider/compare/v1.0.5...v1.0.6) (2020-03-16)
 
 ### [1.0.5](https://github.com/leonied7/vuelidate-provider/compare/v1.0.4...v1.0.5) (2020-03-12)
