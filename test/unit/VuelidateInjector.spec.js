@@ -46,6 +46,15 @@ describe('VuelidateInjector', () => {
     expect(get(wrapper.vm.$v, path)).toBe(injector.vm.fieldProps.validator);
   });
 
+  it('Should be inject validator without path', () => {
+    const wrapper = createWrapper(
+      `<VuelidateInjector>test</VuelidateInjector>`,
+      { VuelidateInjector }
+    );
+    const injector = wrapper.find(VuelidateInjector);
+    expect(wrapper.vm.$v).toBe(injector.vm.fieldProps.validator);
+  });
+
   it('Should be inject validator by path with proxy', () => {
     const injectPath = 'firstName';
     const wrapper = createWrapper(

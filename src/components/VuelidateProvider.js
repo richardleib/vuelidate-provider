@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     getValidatorByPath(path) {
-      return get(this.validator, path);
+      return path ? get(this.validator, path) : this.validator;
     }
   },
   render(h) {
