@@ -11,4 +11,5 @@ module.exports = {
   testMatch: [
     '**/test/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)',
   ],
+  collectCoverage: true,
 };

@@ -1,4 +1,5 @@
 # vuelidate-provider
+[![codecov](https://codecov.io/gh/leonied7/vuelidate-provider/branch/master/graph/badge.svg)](https://codecov.io/gh/leonied7/vuelidate-provider)
 
 ## Demo
 
