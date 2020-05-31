@@ -9,7 +9,7 @@ const path = 'form.user';
 const localVue = createLocalVue();
 localVue.use(Vuelidate);
 
-function createWrapper(template = '', components = {}) {
+function createWrapper(template, components) {
   return mount(
     {
       template: `<VuelidateProvider :validator="$v">${template}</VuelidateProvider>`,
@@ -65,5 +65,16 @@ describe('VuelidateInjector', () => {
     );
     const injector = wrapper.find(VuelidateInjector);
     expect(get(wrapper.vm.$v, `${path}.${injectPath}`)).toBe(injector.vm.fieldProps.validator);
+  });
+
+  it('Should be inject validator without path with proxy', () => {
+    const wrapper = createWrapper(
+      `<VuelidateProxy path="${path}">
+        <VuelidateInjector />
+      </VuelidateProxy>`,
+      { VuelidateProxy, VuelidateInjector }
+    );
+    const injector = wrapper.find(VuelidateInjector);
+    expect(get(wrapper.vm.$v, path)).toBe(injector.vm.fieldProps.validator);
   });
 });
