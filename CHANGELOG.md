@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/leonied7/vuelidate-provider/compare/v1.0.7...v1.1.0) (2020-05-31)
+
+
+### Features
+
+* add ability to inject validator without path ([2787f79](https://github.com/leonied7/vuelidate-provider/commit/2787f79e556fba53f83c66adc0be1a87334d5357))
+
 ### [1.0.7](https://github.com/leonied7/vuelidate-provider/compare/v1.0.6...v1.0.7) (2020-04-24)
 
 

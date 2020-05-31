@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.0.7 
+ * vuelidate-provider v1.1.0 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
@@ -21,7 +21,7 @@ var VuelidateProvider = {
   },
   methods: {
     getValidatorByPath: function getValidatorByPath(path) {
-      return get(this.validator, path);
+      return path ? get(this.validator, path) : this.validator;
     }
   },
   render: function render(h) {
@@ -35,10 +35,8 @@ var VuelidateProvider = {
 };
 
 function normalizeChildren(context, slotProps) {
-  if ( slotProps === void 0 ) slotProps = null;
-
   if (context.$scopedSlots.default) {
-    return context.$scopedSlots.default(slotProps) || [];
+    return context.$scopedSlots.default(slotProps);
   }
 
   return context.$slots.default || [];
@@ -114,7 +112,7 @@ var VuelidateInjector = {
   props: {
     path: {
       type: String,
-      required: true
+      default: ""
     }
   },
   computed: {
