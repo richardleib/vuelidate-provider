@@ -2,7 +2,7 @@ const fs = require('fs')
 const exist = fs.existsSync
 const mkdir = fs.mkdirSync
 const html = require('@rollup/plugin-html');
-const replace = require('rollup-plugin-replace')
+const replace = require('@rollup/plugin-replace')
 const getEntry = require('./entry').getEntry
 const watchEntry = require('./bundle').watchEntry
 
