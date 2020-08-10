@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.1.0 
+ * vuelidate-provider v1.2.0 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
@@ -129,8 +129,47 @@ var VuelidateInjector = {
   }
 };
 
+var VuelidateIter = {
+  name: "VuelidateIter",
+  components: { VuelidateProxy: VuelidateProxy },
+  props: {
+    path: {
+      type: String,
+      default: ""
+    },
+    tag: {
+      type: String,
+      default: "div"
+    }
+  },
+  inject: {
+    getValidatorByPath: {
+      from: "getValidatorByPath"
+    }
+  },
+  computed: {
+    validator: function validator() {
+      return this.getValidatorByPath(this.path);
+    }
+  },
+  render: function render(h) {
+    var this$1 = this;
+
+    return h(
+      this.tag,
+      Object.values(this.validator.$each.$iter).map(function (iter, index) {
+        return h(VuelidateProxy, {
+          props: { path: ((this$1.path) + ".$each." + index) },
+          scopedSlots: this$1.$scopedSlots,
+          slot: this$1.$slots.default
+        });
+      })
+    );
+  }
+};
+
 function registerComponents (Vue, components) {
-  if ( components === void 0 ) components = {VuelidateInjector: VuelidateInjector, VuelidateProxy: VuelidateProxy, VuelidateProvider: VuelidateProvider};
+  if ( components === void 0 ) components = {VuelidateInjector: VuelidateInjector, VuelidateProxy: VuelidateProxy, VuelidateProvider: VuelidateProvider, VuelidateIter: VuelidateIter};
 
   Object.keys(components).forEach(function (componentName) {
     Vue.component(componentName, components[componentName]);
@@ -138,4 +177,4 @@ function registerComponents (Vue, components) {
 }
 
 export default registerComponents;
-export { VuelidateInjector, VuelidateProvider, VuelidateProxy };
+export { VuelidateInjector, VuelidateIter, VuelidateProvider, VuelidateProxy };

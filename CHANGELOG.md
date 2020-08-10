@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/leonied7/vuelidate-provider/compare/v1.1.0...v1.2.0) (2020-08-10)
+
+
+### Features
+
+* add iter for validations with $each ([7397cd2](https://github.com/leonied7/vuelidate-provider/commit/7397cd29d0436ab4d3eb994bee89376bb68252dd))
+
+
+### Bug Fixes
+
+* fix development script ([be9b2b8](https://github.com/leonied7/vuelidate-provider/commit/be9b2b80473afe39b02a3b040d6fe7e78057f3dc))
+
 ## [1.1.0](https://github.com/leonied7/vuelidate-provider/compare/v1.0.7...v1.1.0) (2020-05-31)
 
 
