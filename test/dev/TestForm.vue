@@ -1,63 +1,77 @@
 <template>
-	<vuelidate-provider :validator="$v">
-		<label>Without proxy</label>
-		<vuelidate-injector path="test" #default="{validator ,validatorPath}">
-			<div>
-				<label>{{validatorPath}}</label>
-				<input v-model="validator.$model">
-				<div v-show="validator.$error">error</div>
-			</div>
-		</vuelidate-injector>
-		<label>With proxy</label>
-		<vuelidate-proxy path="nestedObject">
-			<vuelidate-injector path="first_name" #default="{validator ,validatorPath}">
-				<div>
-					<label>{{validatorPath}}</label>
-					<input v-model="validator.$model">
-					<div v-show="validator.$error">error</div>
-				</div>
-			</vuelidate-injector>
-			<vuelidate-injector path="last_name" #default="{validator ,validatorPath}">
-				<div>
-					<label>{{validatorPath}}</label>
-					<input v-model="validator.$model">
-					<div v-show="validator.$error">error</div>
-				</div>
-			</vuelidate-injector>
-			<vuelidate-injector path="email" #default="{validator ,validatorPath}">
-				<div>
-					<label>{{validatorPath}}</label>
-					<input type="email" v-model="validator.$model">
-					<div v-show="validator.$error">error</div>
-				</div>
-			</vuelidate-injector>
-			<label>With nested proxy</label>
-			<vuelidate-proxy path="address">
-				<vuelidate-injector path="street" #default="{validator ,validatorPath}">
-					<div>
-						<label>{{validatorPath}}</label>
-						<input v-model="validator.$model">
-						<div v-show="validator.$error">error</div>
-					</div>
-				</vuelidate-injector>
-				<vuelidate-injector path="city" #default="{validator ,validatorPath}">
-					<div>
-						<label>{{validatorPath}}</label>
-						<input v-model="validator.$model">
-						<div v-show="validator.$error">error</div>
-					</div>
-				</vuelidate-injector>
-				<vuelidate-injector path="postal" #default="{validator ,validatorPath}">
-					<div>
-						<label>{{validatorPath}}</label>
-						<input v-model="validator.$model">
-						<div v-show="validator.$error">error</div>
-					</div>
-				</vuelidate-injector>
-			</vuelidate-proxy>
-		</vuelidate-proxy>
-	</vuelidate-provider>
+  <div>
+    <button @click="show = !show">Toggle inputs</button>
+    <vuelidate-provider v-if="show" :validator="$v">
+      <label>Without proxy</label>
+      <vuelidate-injector path="test" #default="{validator ,validatorPath}">
+        <div>
+          <label>{{validatorPath}}</label>
+          <input v-model="validator.$model">
+          <div v-show="validator.$error">error</div>
+        </div>
+      </vuelidate-injector>
+      <label>With proxy</label>
+      <vuelidate-proxy path="nestedObject">
+        <vuelidate-injector path="first_name" #default="{validator ,validatorPath}">
+          <div>
+            <label>{{validatorPath}}</label>
+            <input v-model="validator.$model">
+            <div v-show="validator.$error">error</div>
+          </div>
+        </vuelidate-injector>
+        <vuelidate-injector path="last_name" #default="{validator ,validatorPath}">
+          <div>
+            <label>{{validatorPath}}</label>
+            <input v-model="validator.$model">
+            <div v-show="validator.$error">error</div>
+          </div>
+        </vuelidate-injector>
+        <vuelidate-injector path="email" #default="{validator ,validatorPath}">
+          <div>
+            <label>{{validatorPath}}</label>
+            <input type="email" v-model="validator.$model">
+            <div v-show="validator.$error">error</div>
+          </div>
+        </vuelidate-injector>
+        <label>With nested proxy</label>
+        <vuelidate-proxy path="address">
+          <vuelidate-injector path="street" #default="{validator ,validatorPath}">
+            <div>
+              <label>{{validatorPath}}</label>
+              <input v-model="validator.$model">
+              <div v-show="validator.$error">error</div>
+            </div>
+          </vuelidate-injector>
+          <vuelidate-injector path="city" #default="{validator ,validatorPath}">
+            <div>
+              <label>{{validatorPath}}</label>
+              <input v-model="validator.$model">
+              <div v-show="validator.$error">error</div>
+            </div>
+          </vuelidate-injector>
+          <vuelidate-injector path="postal" #default="{validator ,validatorPath}">
+            <div>
+              <label>{{validatorPath}}</label>
+              <input v-model="validator.$model">
+              <div v-show="validator.$error">error</div>
+            </div>
+          </vuelidate-injector>
+        </vuelidate-proxy>
+        <label>With iter</label>
+        <vuelidate-iter path="phones">
+          <vuelidate-injector path="model" #default="{validator ,validatorPath}">
+            <div>
+              <label>{{validatorPath}}</label>
+              <input v-model="validator.$model">
+              <div v-show="validator.$error">error</div>
+            </div>
+          </vuelidate-injector>
+        </vuelidate-iter>
+      </vuelidate-proxy>
+    </vuelidate-provider>
+  </div>
 </template>
+
 <script>
   import required from 'vuelidate/lib/validators/required'
   import minLength from 'vuelidate/lib/validators/minLength'
@@ -68,6 +82,7 @@
   export default {
     data () {
       return {
+        show: true,
         test: 'qwe123',
         nestedObject: {
           first_name: '',
@@ -82,7 +97,7 @@
             {
               model: '',
               brand: ''
-            }
+            },
           ]
         },
       }
