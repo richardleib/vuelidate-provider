@@ -39,7 +39,7 @@ describe('global registration', () => {
   it('Components should be correct register globally', () => {
     const wrapper = createWrapper(
       `<VuelidateProxy path="${path}">
-        <VuelidateInjector path="${path}">${path}</VuelidateInjector>
+        <VuelidateInjector>${path}</VuelidateInjector>
       </VuelidateProxy>`,
     );
     const injector = wrapper.find(VuelidateInjector);
