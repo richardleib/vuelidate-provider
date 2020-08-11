@@ -70,7 +70,7 @@ describe('VuelidateInjector', () => {
   it('Should be inject validator without path with proxy', () => {
     const wrapper = createWrapper(
       `<VuelidateProxy path="${path}">
-        <VuelidateInjector />
+        <VuelidateInjector>${path}</VuelidateInjector>
       </VuelidateProxy>`,
       { VuelidateProxy, VuelidateInjector }
     );
