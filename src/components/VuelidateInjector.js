@@ -30,6 +30,9 @@ export default {
     }
   },
   render() {
+    if(!this.validatorByPath) {
+      throw new Error(`[Vuelidate-provider]: validator by path '${this.validatorPath}' doesn't exists`);
+    }
     return normalizeChildren(this, this.fieldProps);
   }
 };
