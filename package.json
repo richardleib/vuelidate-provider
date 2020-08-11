@@ -61,7 +61,7 @@
   },
   "standard-version": {
     "scripts": {
-      "postchangelog": "yarn clean && yarn build && git add dist"
+      "postchangelog": "yarn jest && yarn clean && yarn build && git add dist"
     }
   }
 }
