@@ -77,4 +77,14 @@ describe('VuelidateInjector', () => {
     const injector = wrapper.find(VuelidateInjector);
     expect(get(wrapper.vm.$v, path)).toBe(injector.vm.fieldProps.validator);
   });
+
+  it('Should throw error if validator doesn`t exists', () => {
+    const incorrectPath = `${path}.${path}`;
+    expect(() => {
+      createWrapper(
+        `<VuelidateInjector path="${incorrectPath}">test</VuelidateInjector>`,
+        { VuelidateInjector }
+      )
+    }).toThrowError(`${incorrectPath}`);
+  })
 });
