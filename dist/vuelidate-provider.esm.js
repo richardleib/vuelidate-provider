@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.2.0 
+ * vuelidate-provider v1.3.0 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
@@ -125,6 +125,9 @@ var VuelidateInjector = {
     }
   },
   render: function render() {
+    if(!this.validatorByPath) {
+      throw new Error(("[Vuelidate-provider]: validator by path '" + (this.validatorPath) + "' doesn't exists"));
+    }
     return normalizeChildren(this, this.fieldProps);
   }
 };
