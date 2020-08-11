@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/leonied7/vuelidate-provider/compare/v1.3.0...v1.3.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* check tests before release ([dfd1a82](https://github.com/leonied7/vuelidate-provider/commit/dfd1a820a8139b96a60453f7e8dd8a2841c7b0ed))
+* fix test after add error in VuelidateInjector ([f3d9109](https://github.com/leonied7/vuelidate-provider/commit/f3d910990ffac9a97b677ec07c88e63a9cfddae1))
+
 ## [1.3.0](https://github.com/leonied7/vuelidate-provider/compare/v1.2.0...v1.3.0) (2020-08-11)
 
 
