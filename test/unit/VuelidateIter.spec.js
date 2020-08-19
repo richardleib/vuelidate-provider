@@ -51,9 +51,9 @@ describe('VuelidateIter', () => {
       `<VuelidateIter path="${path}" #default="{fullPath}">{{fullPath}}</VuelidateIter>`,
       { VuelidateIter }
     );
-    const proxies = wrapper.findAll(VuelidateProxy);
-    expect(proxies.length).toBe(roles.length);
-    proxies.wrappers.forEach((proxy, index) => {
+    const proxyWrappers = wrapper.findAll(VuelidateProxy);
+    expect(proxyWrappers.length).toBe(roles.length);
+    proxyWrappers.wrappers.forEach((proxy, index) => {
       expect(proxy.text()).toBe(`${path}.$each.${index}`);
     });
   });
@@ -63,16 +63,30 @@ describe('VuelidateIter', () => {
       `<VuelidateIter path="${path}" />`,
       { VuelidateIter }
     );
-    const iter = wrapper.find(VuelidateIter);
+    const iterWrapper = wrapper.find(VuelidateIter);
     const content = roles.reduce(result => result + '<div></div>', '');
 
-    expect(elementContent(iter)).toBe(`<div>${content}</div>`);
+    expect(elementContent(iterWrapper)).toBe(`<div>${content}</div>`);
 
-    iter.setProps({
+    iterWrapper.setProps({
       tag: 'span'
     });
-    await iter.vm.$nextTick();
+    await iterWrapper.vm.$nextTick();
 
-    expect(elementContent(iter)).toBe(`<span>${content}</span>`);
+    expect(elementContent(iterWrapper)).toBe(`<span>${content}</span>`);
+  });
+
+  it('Should set props for proxy', async () => {
+    const proxyProps = { tag: 'span' };
+    const wrapper = createWrapper(
+      `<VuelidateIter path="${path}" />`,
+      { VuelidateIter }
+    );
+    const iterWrapper = wrapper.find(VuelidateIter);
+    iterWrapper.setProps({ proxyProps });
+    await iterWrapper.vm.$nextTick();
+
+    const proxyWrapper = wrapper.find(VuelidateProxy);
+    expect(proxyWrapper.props('tag')).toBe('span');
   });
 });
