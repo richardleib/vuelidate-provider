@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.5](https://github.com/leonied7/vuelidate-provider/compare/v1.3.4...v1.3.5) (2020-08-19)
+
+
+### Bug Fixes
+
+* dot-prop vulnerability ([f884e66](https://github.com/leonied7/vuelidate-provider/commit/f884e66fed5484c04927a90c39f6b5742bd5c9bd))
+
 ### [1.3.4](https://github.com/leonied7/vuelidate-provider/compare/v1.3.3...v1.3.4) (2020-08-19)
 
 
