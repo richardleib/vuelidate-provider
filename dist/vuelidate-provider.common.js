@@ -1,5 +1,5 @@
 /*!
- * vuelidate-provider v1.3.5 
+ * vuelidate-provider v1.4.0 
  * (c) 2020 Denis
  * Released under the MIT License.
  */
@@ -149,6 +149,10 @@ var VuelidateIter = {
     tag: {
       type: String,
       default: "div"
+    },
+    proxyProps: {
+      type: Object,
+      default: function () { return ({}); },
     }
   },
   inject: {
@@ -168,7 +172,7 @@ var VuelidateIter = {
       this.tag,
       Object.values(this.validator.$each.$iter).map(function (iter, index) {
         return h(VuelidateProxy, {
-          props: { path: ((this$1.path) + ".$each." + index) },
+          props: Object.assign({}, this$1.proxyProps, {path: ((this$1.path) + ".$each." + index)}),
           scopedSlots: this$1.$scopedSlots,
           slot: this$1.$slots.default
         });

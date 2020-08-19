@@ -1,6 +1,6 @@
 {
   "name": "vuelidate-provider",
-  "version": "1.3.5",
+  "version": "1.4.0",
   "description": "Helps provide vuelidate for nested components",
   "main": "dist/vuelidate-provider.common.js",
   "module": "dist/vuelidate-provider.esm.js",

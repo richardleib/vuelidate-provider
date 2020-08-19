@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/leonied7/vuelidate-provider/compare/v1.3.5...v1.4.0) (2020-08-19)
+
+
+### Features
+
+* add ability to set proxy props in iter ([39235d1](https://github.com/leonied7/vuelidate-provider/commit/39235d12b8cba22158b37508004a34b5b430bc55))
+
 ### [1.3.5](https://github.com/leonied7/vuelidate-provider/compare/v1.3.4...v1.3.5) (2020-08-19)
 
 
