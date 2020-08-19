@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4](https://github.com/leonied7/vuelidate-provider/compare/v1.3.3...v1.3.4) (2020-08-19)
+
+
+### Bug Fixes
+
+* update terser plugin for update serialize-javascript ([d5a04ed](https://github.com/leonied7/vuelidate-provider/commit/d5a04eddf1eebb2f8114e82f4c0c89d3d0c5dc4a))
+
 ### [1.3.3](https://github.com/leonied7/vuelidate-provider/compare/v1.3.2...v1.3.3) (2020-08-11)
 
 ### [1.3.2](https://github.com/leonied7/vuelidate-provider/compare/v1.3.1...v1.3.2) (2020-08-11)
